@@ -4,6 +4,16 @@
 \usepackage{enumitem}
 \usepackage{multirow}
 \usepackage{tabularx}
+\usepackage{microtype}
+\usepackage{hyperref}
+% Special footnote without marker from http://tex.stackexchange.com/questions/30720/footnote-without-a-marker
+\newcommand\blfootnote[1]{%
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}%
+	\addtocounter{footnote}{-1}%
+	\endgroup
+}
+
 \begin{document}
 \pagestyle{empty}
 \begin{center}
@@ -24,15 +34,9 @@ Curriculum Vitae
 \section*{Education}
 \begin{tabularx}{\textwidth}{ l X }
 \multicolumn{2}{l}{\bf University of Southampton} \\
-2008-Present &
-Currently in second year of study for a Bachelor of Science in Computer Science.
-I received a 1st for the first year which covered:
-\begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=0pt ,parsep=0pt]
-\item Java Programming
-\item Data Structures and Algorithms
-\item Discrete Mathematics
-\item Software Engineering (UML and Design Patterns)
-\end{itemize} \\
+2008-2012 & 
+2.i BSc in Computer Science.
+Final project was titled "Publish/Subscribe Method for Updates to Linked Data" which proposes and has a working implementation of a REST API for asynchronously disseminating notifications for updates to semantic web documents.  \\
 \multicolumn{2}{l}{\bf Dr Challoner's Grammar School} \\
 2006-2008 & A Levels in Electronics (A), Maths (B) and Physics (B) \\
 \multicolumn{2}{l}{\bf The Amersham School} \\
@@ -40,16 +44,23 @@ I received a 1st for the first year which covered:
 \end{tabularx}
 \section*{Experience}
 \begin{tabularx}{\textwidth}{l X}
+\multicolumn{2}{l}{\bf Smoothwall Ltd. - Junior Developer} \\
+\parbox[t]{2cm}{July 2012 -\\ Present} & 
+Presently acting as a Maintenance Developer on Smoothwall's various linux-based firewall and web filtering products.
+This includes tracking and fixing bugs in Smoothwall's Perl and C code base, along with patching issues in software from 3rd parties
+as well as diagnosing issues occurring in the field with Support Engineers, acting as a filter between them and the rest of the development team.
+The role also includes following security releases to upstream packages and maintaining development systems such as Bugzilla, Gerrit and Jenkins.\\
+\multicolumn{2}{l}{\bf Smoothwall Ltd. - Placement Sysadmin} \\
+\parbox[t]{2cm}{July 2010 -\\ Aug 2011} &
+Year long internship as a gap between my second and third years of University.
+During the year, I acted as both front line support as well as handling the configuration and development of both internal and external, customer facing systems including:
+migration from a hosted Exchange service to Google Apps, implementation of Nagios monitoring and the configuration and deployment of a new file server.
+Of particular note, I designed, developed and deployed OpenID authentication to the Partner Portal for staff members, such that they can have Single Sign On between their mail and sales tracking systems and a Google AppEngine based staff directory, using Python with Django along with various Google APIs for gathering user information.\\
 \multicolumn{2}{l}{\bf Insight Software - Software Developer} \\
 Summer 2009 & Insight Software is a relatively small development company making software for large businesses to help them manage and plan their finances.
 I spent 2 months over the summer break as a software developer on back-end services for their enterprise software {\it Insight}.
 This included a full scheduler (similar to cron) for generating reports against a business management back-end such as Oracle E-Business
 and an easy to understand interface to allow users to add jobs to the scheduler and administrators to control the scheduler. \\
-\multicolumn{2}{l}{\bf Southwest LANs - Game server administrator} \\
-2008-Present & Southwest LANs is a LAN party company who run the LeachLAN Series of events.
-I work as a game server administrator at their events, running many different server software in a variety of different configurations which all involve their own unique touch.
-To assist in this, I wrote a web-based administration tool using Django and Python to improve the creation process of servers based on template configurations which are changed when the server configuration is deployed to a target server.
-This role also requires me to maintain a link with the customers attending the event to understand what they need from the game servers.\\
 \multicolumn{2}{l}{\bf Multiplay UK - i-Series Yellow Shirt} \\
 2009-Present & Multiplay UK is a gaming company who run the UK's largest LAN party (the i-Series) as well as being a large online community and game server provider.
 A yellow shirt is responsible for running the customer facing helpdesk which acts as front line technical support and communicating network issues to the core network team.
@@ -57,27 +68,26 @@ The team also assists other staff members in various tasks involved in running t
 \end{tabularx}
 \newpage
 \section*{Skills}
+\subsection*{Programming}
+Through my professional life, hobbyist coding and studies, I have learned: 
+\begin{itemize}[itemsep=2pt ,parsep=2pt]
+\item WinForms development with C\#
+\item Perl, Python and Bash scripting
+\item Web development through CGI scripts as well as frameworks such as Django and Webapp
+\item Javascript with Mootools, jQuery and various client-side templating tools
+\item Using different threading including various synchronisation mechanisms including variable locks and mutexes, including issues that can arise in real-time scenarios.
+\item Java and LISP
+\item iPhone and Android development.
+\item Use of revision control systems such as Git, SVN and Microsoft Team Foundation Server.
+\end{itemize}
 \subsection*{System Administration}
-During my work for Multiplay and Southwest LANs along with lots of personal interest I have learnt many things in the area of system administration including:
+During my work for Multiplay and Smoothwall along with lots of personal interest I have learnt many things in the area of system administration including:
 \begin{itemize}[itemsep=2pt ,parsep=2pt]
 \item Administration of many varieties of Unix (including Gentoo, Fedora and Ubuntu distributions of Linux and FreeBSD), Mac OS X and Windows systems.
-\item Network design, implementation and troubleshooting including usage of Cisco's IOS configuration terminal.
+\item Network design, implementation and troubleshooting.
 \item Configuration of vital network services such as DHCP, DNS, Routing and Proxies (such as Squid).
-\item Usage of a variety of database systems including MySQL, Microsoft SQL Server and SQLite.
-\item Apache configuration including virtual hosts and use of various modules (such as SVN and Python).
-\item Configuration and maintenance of a ZFS pool.
-\item Initial set up and maintenance of an LDAP directory, used for RADIUS authentication as well as other unified credential network services such as Samba.
-\end{itemize}
-\subsection*{Programming}
-Part of the course I am studying at university and working for Insight as well as a hobby, I have learnt a few programming languages and refined some of them to a high level. These skills include:
-\begin{itemize}[itemsep=2pt ,parsep=2pt]
-\item Refined use of Microsoft's .net languages including C\# as a primary language.
-\item Plenty of experience using different threading including various synchronisation mechanisms including variable locks and mutexes.
-\item Designing and programming support for network applications using both TCP unicast and UDP broadcast and multicast.
-\item Scripting in Perl and various shells such as Bash and Windows PowerShell.
-\item iPhone development.
-\item Additional experience in Python, LISP, Java and C.
-\item Use of revision control systems such as SVN and Microsoft Team Foundation Server.
+\item Development with and administration of a variety of database systems including PostgreSQL, MySQL, Microsoft SQL Server and SQLite.
+\item Apache and nginx configuration including virtual hosts and use of various modules (such as SVN and Python).
 \end{itemize}
 \subsection*{Soft Skills}
 Over my life of work and study, I have gained soft skills which are vital to be productive in a working environment.
@@ -90,4 +100,5 @@ The best example of this is my home network, which consists of extremely configu
 
 However, I do like to get away from computers and experience the outside world. I enjoy getting out into the woods and playing some Paintball, which is a team intensive exercise.
 Additionally, I have a passion for the technical side of theatre, be it lighting a stage or assisting behind it, I enjoy seeing a show come together from rehearsals, through design and construction and to the final performance.
+\blfootnote{Like \LaTeX? Fork this on github - \url{https://github.com/niax/CV}}
 \end{document}
