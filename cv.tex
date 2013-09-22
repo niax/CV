@@ -19,24 +19,21 @@
 \begin{center}
 \begin{LARGE}
 {\bf Nicholas Hollett}
-\end{LARGE}\\[3pt]
+\end{LARGE}\\
+{\bf Email:} {\ttfamily cv@niax.co.uk}\\[3pt]
 \begin{large}
 Curriculum Vitae
 \end{large}
-\end{center}
-\section*{Contact Details}
-\begin{center}
-\begin{tabular*}{200pt}{ l@{\extracolsep{\fill}} l  r@{\extracolsep{\fill}} }
- & {\bf Email:} & cv@niax.co.uk \\
- & \multicolumn{2}{c}{Other details available on request}
-\end{tabular*}
 \end{center}
 \section*{Education}
 \begin{tabularx}{\textwidth}{ l X }
 \multicolumn{2}{l}{\bf University of Southampton} \\
 2008-2012 & 
 2.i BSc in Computer Science.
-Final project was titled "Publish/Subscribe Method for Updates to Linked Data" which proposes and has a working implementation of a REST API for asynchronously disseminating notifications for updates to semantic web documents.  \\
+Modules include: Scripting Languages, Networks, Databases, Architecture and Security.
+Final project covered the specification and implementation of a REST based interface for a Publish/Subscribe service,
+with the implementation targeted at disseminating notifications when a semantic web document is updated.
+This allows derivative works to update when the source is changed without having to be constantly re-rendered.\\
 \multicolumn{2}{l}{\bf Dr Challoner's Grammar School} \\
 2006-2008 & A Levels in Electronics (A), Maths (B) and Physics (B) \\
 \multicolumn{2}{l}{\bf The Amersham School} \\
@@ -46,10 +43,14 @@ Final project was titled "Publish/Subscribe Method for Updates to Linked Data" w
 \begin{tabularx}{\textwidth}{l X}
 \multicolumn{2}{l}{\bf Smoothwall Ltd. - Junior Developer} \\
 \parbox[t]{2cm}{July 2012 -\\ Present} & 
-Presently acting as a Maintenance Developer on Smoothwall's various linux-based firewall and web filtering products.
-This includes tracking and fixing bugs in Smoothwall's Perl and C code base, along with patching issues in software from 3rd parties
-as well as diagnosing issues occurring in the field with Support Engineers, acting as a filter between them and the rest of the development team.
-The role also includes following security releases to upstream packages and maintaining development systems such as Bugzilla, Gerrit and Jenkins.\\
+Presently acting as a Maintenance Developer, covering three roles: developer, sysadmin and third line support.
+Primarily, as a developer on Smoothwall's various linux based firewall and web filtering products,
+tracking and fixing bugs in a Perl, Javascript and C codebase as well as applying patches to various upstream projects.
+Also involved in new development in both the product and build systems.
+Recently, reimplemented ISO and patch system build processes in Perl,
+moving away from a loose collection of Makefiles and shell scripts allowing significant unit testing around such a vital process.
+These build systems are maintained by my team, ensuring proper integration of Bugzilla, gerrit, Jenkins and a debian repository.
+And finally, as third line support, providing technical advice to the main support teams and debugging problems on customer's sites.\\
 \multicolumn{2}{l}{\bf Smoothwall Ltd. - Placement Sysadmin} \\
 \parbox[t]{2cm}{July 2010 -\\ Aug 2011} &
 Year long internship as a gap between my second and third years of University.
@@ -71,11 +72,12 @@ The team also assists other staff members in various tasks involved in running t
 \subsection*{Programming}
 Through my professional life, hobbyist coding and studies, I have learned: 
 \begin{itemize}[itemsep=2pt ,parsep=2pt]
-\item WinForms development with C\#
 \item Perl, Python and Bash scripting
-\item Web development through CGI scripts as well as frameworks such as Django and Webapp
+\item Debian packaging, using {\ttfamily debhelper} and Makefiles
+\item Debugging programs, watching syscalls in {\ttfamily strace} and step-by-step in {\ttfamily gdb}
+\item Web development through CGI scripts as well as frameworks such as Django and Mojolicious
+\item WinForms development with C\#
 \item Javascript with Mootools, jQuery and various client-side templating tools
-\item Using different threading including various synchronisation mechanisms including variable locks and mutexes, including issues that can arise in real-time scenarios.
 \item Java and LISP
 \item iPhone and Android development.
 \item Use of revision control systems such as Git, SVN and Microsoft Team Foundation Server.
@@ -84,8 +86,10 @@ Through my professional life, hobbyist coding and studies, I have learned:
 During my work for Multiplay and Smoothwall along with lots of personal interest I have learnt many things in the area of system administration including:
 \begin{itemize}[itemsep=2pt ,parsep=2pt]
 \item Administration of many varieties of Unix (including Gentoo, Fedora and Ubuntu distributions of Linux and FreeBSD), Mac OS X and Windows systems.
-\item Network design, implementation and troubleshooting.
+\item Network design, implementation and troubleshooting using standard tooling such as {\ttfamily tcpdump} and {\ttfamily ss}.
 \item Configuration of vital network services such as DHCP, DNS, Routing and Proxies (such as Squid).
+\item Knowledge of common networking protocols like Kerberos, SMTP, HTTP, SSL and debugging through reading captures in Wireshark.
+\item Deep understanding of configuration of Linux's networking stack using {\ttfamily ip} and {\ttfamily iptables}.
 \item Development with and administration of a variety of database systems including PostgreSQL, MySQL, Microsoft SQL Server and SQLite.
 \item Apache and nginx configuration including virtual hosts and use of various modules (such as SVN and Python).
 \end{itemize}
@@ -97,8 +101,5 @@ Working as part of a team is also something which I am growing adapt at, buildin
 Outside of my studies and work life, I try to maintain a set of interests closely related to the work and studies that I do.
 Part of me has the desire to know everything about something I'm interested in until I cannot learn any more and this is reflected in the extremes I can take my hobbies to.
 The best example of this is my home network, which consists of extremely configurable hardware such that I can use the network as a test bed for many different services, such that I can experience the systems in an environment which is not service critical.
-
-However, I do like to get away from computers and experience the outside world. I enjoy getting out into the woods and playing some Paintball, which is a team intensive exercise.
-Additionally, I have a passion for the technical side of theatre, be it lighting a stage or assisting behind it, I enjoy seeing a show come together from rehearsals, through design and construction and to the final performance.
 \blfootnote{Like \LaTeX? Fork this on github - \url{https://github.com/niax/CV}}
 \end{document}
