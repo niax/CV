@@ -6,6 +6,7 @@
 \usepackage{tabularx}
 \usepackage{microtype}
 \usepackage{hyperref}
+\usepackage{booktabs}
 % Special footnote without marker from http://tex.stackexchange.com/questions/30720/footnote-without-a-marker
 \newcommand\blfootnote[1]{%
 	\begingroup
@@ -20,11 +21,58 @@
 \begin{LARGE}
 {\bf Nicholas Hollett}
 \end{LARGE}\\
-{\bf Email:} {\ttfamily cv@niax.co.uk}\\[3pt]
+{\bf Email:} {\ttfamily cv@niax.co.uk} \\
+{\bf Github:} \url{https://github.com/niax} \\[3pt]
 \begin{large}
 Curriculum Vitae
 \end{large}
 \end{center}
+\section*{Experience}
+\begin{tabularx}{\textwidth}{l r}
+{\bf Moonfruit - Platform Developer} & April 2014 - Present \\
+\multicolumn{2}{X}{
+As a Platform Developer working on Moonfruit's website builder software I work on the team tasked with rebuilding the product from scratch.
+This includes integrating various language's build systems (Python's {\tt distutils} and {\tt grunt} for JavaScript) into the CI, ultimately producing Debian packages.
+These packages can then be used in the integration environment that I implemented using Vagrant and Puppet.
+This allows developers to have a working install of the software within minutes, despite the complexity of the disparate services that powers it.
+On top of this, I also participate in the design and implementation of the various backend services which use a mix of Django and Flask, backed by a PostgreSQL database.
+}
+\\
+\addlinespace
+{\bf Smoothwall Ltd. - Junior Developer} & July 2012 - April 2014 \\
+\multicolumn{2}{X}{
+I acted as a Maintenance Developer, covering three roles: developer, sysadmin and third line support.
+As a developer, I spent most of my time fixing bugs in Smoothwall's various Linux based firewall and web filtering products,
+across Perl, JavaScript and C codebases.
+This included package maintenance tasks, updating in-house packaging for new upstream versions and applying security patches.
+As well as working on the product, I was also responsible for the CI systems that build the product.
+This included a complete rewrite of the ISO and patch build processes, moving away from a collection of Makefiles and shell scripts to a unit tested Perl framework.
+Finally, I performed a third line support role, assisting the main support teams in debugging problems on customer's sites.
+}
+\\
+\addlinespace
+{\bf Smoothwall Ltd. - Placement Sysadmin} & July 2010 - Aug 2011 \\
+\multicolumn{2}{X}{
+Year long internship as a gap between my second and third years of University.
+During the year, I performed first line technical support for the office, as well as designing and implementing IT systems used both internally and externally.
+This included creating and updating a number of services to integrate a Google Apps domain into existing systems.
+}
+\\
+\addlinespace
+{\bf Insight Software - Software Developer} & Summer 2009 \\
+\multicolumn{2}{X}{
+I spent 2 months over the summer break as a software developer on backend services for their enterprise software {\it Insight}.
+This included the implementation of a report scheduler system in C\# for generating PDFs based on data sourced from ERP systems.
+}
+\\
+\addlinespace
+{\bf Multiplay UK - i-Series Event Volunteer} & 2009 - Present \\
+\multicolumn{2}{X}{
+I volunteer to assist running the running of Multiplay's i-series events as a "Yellow Shirt" team leader.
+This involves guiding the set up of power and network infrastructure as well as running the customer facing helpdesk which provides first line technical support to attendees.
+Outside of the event, I assist in the planning, communicating feedback and ideas from the team to the event organizers.
+}
+\end{tabularx}
 \section*{Education}
 \begin{tabularx}{\textwidth}{ l X }
 \multicolumn{2}{l}{\bf University of Southampton} \\
@@ -39,34 +87,6 @@ This allows derivative works to update when the source is changed without having
 \multicolumn{2}{l}{\bf The Amersham School} \\
 2001-2006 & 11 GCSEs grade A* to C including Science, Maths, IT, English, History, Geography and German
 \end{tabularx}
-\section*{Experience}
-\begin{tabularx}{\textwidth}{l X}
-\multicolumn{2}{l}{\bf Smoothwall Ltd. - Junior Developer} \\
-\parbox[t]{2cm}{July 2012 -\\ Present} & 
-Presently acting as a Maintenance Developer, covering three roles: developer, sysadmin and third line support.
-Primarily, as a developer on Smoothwall's various linux based firewall and web filtering products,
-tracking and fixing bugs in a Perl, Javascript and C codebase as well as applying patches to various upstream projects.
-Also involved in new development in both the product and build systems.
-Recently, reimplemented ISO and patch system build processes in Perl,
-moving away from a loose collection of Makefiles and shell scripts allowing significant unit testing around such a vital process.
-These build systems are maintained by my team, ensuring proper integration of Bugzilla, gerrit, Jenkins and a debian repository.
-And finally, as third line support, providing technical advice to the main support teams and debugging problems on customer's sites.\\
-\multicolumn{2}{l}{\bf Smoothwall Ltd. - Placement Sysadmin} \\
-\parbox[t]{2cm}{July 2010 -\\ Aug 2011} &
-Year long internship as a gap between my second and third years of University.
-During the year, I acted as both front line support as well as handling the configuration and development of both internal and external, customer facing systems including:
-migration from a hosted Exchange service to Google Apps, implementation of Nagios monitoring and the configuration and deployment of a new file server.
-Of particular note, I designed, developed and deployed OpenID authentication to the Partner Portal for staff members, such that they can have Single Sign On between their mail and sales tracking systems and a Google AppEngine based staff directory, using Python with Django along with various Google APIs for gathering user information.\\
-\multicolumn{2}{l}{\bf Insight Software - Software Developer} \\
-Summer 2009 & Insight Software is a relatively small development company making software for large businesses to help them manage and plan their finances.
-I spent 2 months over the summer break as a software developer on back-end services for their enterprise software {\it Insight}.
-This included a full scheduler (similar to cron) for generating reports against a business management back-end such as Oracle E-Business
-and an easy to understand interface to allow users to add jobs to the scheduler and administrators to control the scheduler. \\
-\multicolumn{2}{l}{\bf Multiplay UK - i-Series Yellow Shirt} \\
-2009-Present & Multiplay UK is a gaming company who run the UK's largest LAN party (the i-Series) as well as being a large online community and game server provider.
-A yellow shirt is responsible for running the customer facing helpdesk which acts as front line technical support and communicating network issues to the core network team.
-The team also assists other staff members in various tasks involved in running the event such as helping exhibitors and activities on stage.
-\end{tabularx}
 \newpage
 \section*{Skills}
 \subsection*{Programming}
@@ -76,9 +96,9 @@ Through my professional life, hobbyist coding and studies, I have learned:
 \item Debian packaging, using {\ttfamily debhelper} and Makefiles
 \item Debugging programs, watching syscalls in {\ttfamily strace} and step-by-step in {\ttfamily gdb}
 \item Web development through CGI scripts as well as frameworks such as Django and Mojolicious
-\item WinForms development with C\#
 \item Javascript with Mootools, jQuery and various client-side templating tools
 \item Java and LISP
+\item WinForms development with C\#
 \item iPhone and Android development.
 \item Use of revision control systems such as Git, SVN and Microsoft Team Foundation Server.
 \end{itemize}
@@ -86,20 +106,13 @@ Through my professional life, hobbyist coding and studies, I have learned:
 During my work for Multiplay and Smoothwall along with lots of personal interest I have learnt many things in the area of system administration including:
 \begin{itemize}[itemsep=2pt ,parsep=2pt]
 \item Administration of many varieties of Unix (including Gentoo, Fedora and Ubuntu distributions of Linux and FreeBSD), Mac OS X and Windows systems.
+\item Automated deployment of systems using Puppet
 \item Network design, implementation and troubleshooting using standard tooling such as {\ttfamily tcpdump} and {\ttfamily ss}.
 \item Configuration of vital network services such as DHCP, DNS, Routing and Proxies (such as Squid).
 \item Knowledge of common networking protocols like Kerberos, SMTP, HTTP, SSL and debugging through reading captures in Wireshark.
-\item Deep understanding of configuration of Linux's networking stack using {\ttfamily ip} and {\ttfamily iptables}.
+\item Deep understanding of configuration of Linux's networking stack using {\ttfamily iproute2} and {\ttfamily iptables}.
 \item Development with and administration of a variety of database systems including PostgreSQL, MySQL, Microsoft SQL Server and SQLite.
 \item Apache and nginx configuration including virtual hosts and use of various modules (such as SVN and Python).
 \end{itemize}
-\subsection*{Soft Skills}
-Over my life of work and study, I have gained soft skills which are vital to be productive in a working environment.
-Communication is a key element of these skills and these have been honed extensively, from talking and producing specifications as part of my work on development projects and dealing with end users in my positions at the LAN parties.
-Working as part of a team is also something which I am growing adapt at, building on top of good communication, I can take control of a group and delegate work effectively.
-\section*{Interests}
-Outside of my studies and work life, I try to maintain a set of interests closely related to the work and studies that I do.
-Part of me has the desire to know everything about something I'm interested in until I cannot learn any more and this is reflected in the extremes I can take my hobbies to.
-The best example of this is my home network, which consists of extremely configurable hardware such that I can use the network as a test bed for many different services, such that I can experience the systems in an environment which is not service critical.
 \blfootnote{Like \LaTeX? Fork this on github - \url{https://github.com/niax/CV}}
 \end{document}
